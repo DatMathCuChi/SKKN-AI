@@ -4,7 +4,7 @@ import { SYSTEM_INSTRUCTION } from "../constants";
 let chatSession: Chat | null = null;
 
 export const initializeGeminiChat = (apiKey: string) => {
-  const ai = new GoogleGenAI({ apiKey });
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   
   chatSession = ai.chats.create({
     model: 'gemini-2.5-flash',
